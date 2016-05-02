@@ -1,0 +1,65 @@
+//**************************************************************************
+//
+// NAME :   DvdEx.idl 
+//
+// IDL fuer Anwendung zum Tausch von DVDs.
+//
+//****************************************************************************
+
+module DvdEx {
+
+  enum Genre { g_undefined, SciFi, Comedy, Action, Horror, Docu };
+  enum StatusType { s_undefined, available, lent };
+
+  struct DvdExMedia {
+    long   ObjectId;
+    long   ProviderId;
+    Genre  Type;
+    string Title;
+    string ProductionCountry;
+    short  ProductionYear;
+    short  Length;
+    StatusType Status;
+  };
+
+  struct DvdExProvider {
+    long   ObjectId;
+    string Name;
+    string FirstName;
+    long   ZIPCode;  
+    string Address;
+  };
+  
+  exception ServerException {
+    string reason;
+  };
+
+  typedef sequence<DvdExMedia>    DvdExMediaSeq;
+  typedef sequence<DvdExProvider> DvdExProviderSeq;
+
+  interface DvdExRepository {
+    readonly attribute long currentMaxProviderId;
+    readonly attribute long currentMaxMediaId;    
+
+    void save ();
+
+    void addProvider (in DvdExProvider p);
+    void delProvider (in long id);    
+
+    DvdExProvider getProvider (in long id) 
+      raises (ServerException);
+    DvdExProviderSeq getProviders () 
+      raises (ServerException);
+
+    void addMedia (in DvdExMedia p);
+    void delMedia (in long id);    
+
+
+    DvdExMedia getMedia (in long id) 
+      raises (ServerException);
+    DvdExMediaSeq getMediaOfType (in Genre type) 
+      raises (ServerException);
+    DvdExMediaSeq getMediaYoungerThan (in short year) 
+      raises (ServerException);
+  };
+};

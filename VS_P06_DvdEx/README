@@ -1,0 +1,29 @@
+Client-/Server-System zum Tausch von DVDs (DvdEx - DVD Exchange)
+................................................................
+
+Dateien:
+
+	DvdEx.idl		IDL-Definitionen zum Modul DvdEx.
+
+	Client.cc		Client (C++) implementiert Zugriff auf Server
+				ueber simples Terminal-Interface.
+
+	Srv_Main.cc		Server (C++)
+
+	DvdExRepository_i.h	Server-Implementierung in C++
+	DvdExRepository_i.cc
+
+Erzeugung der Executables: 
+
+	Mit 'make' werden die Binaries fuer den Server und Client erzeugt. 
+	Mit 'make clean' oder 'make veryclean' werden die generierten 
+	Dateien wieder gelöscht.
+
+Starten des Servers: 	
+	'make runserver' oder './dvdexserver'
+
+Starten des Clients (lokal, im gleichen Verzeichnis):
+	'make runclient' oder '.dvdexclient <user>@<host>'
+
+Apr 2016, Heinz-Josef Eikerling
+

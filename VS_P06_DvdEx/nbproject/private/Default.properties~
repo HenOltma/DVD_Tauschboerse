@@ -1,0 +1,4 @@
+/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx/VMSSK.cc=/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx#-g -c -I. VMSSK.cc
+/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx/Srv_Main.cc=/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx#-g -c -I. Srv_Main.cc
+/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx/VMSRepository_i.cc=/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx#-g -c -I. VMSRepository_i.cc
+/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx/Client.cc=/home/student/Lehre/Verteilte Systeme/Praktikum/Praktikum 6/VS_P06_DvdEx#-g -c -I. Client.cc
