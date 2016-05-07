@@ -347,7 +347,19 @@ void getMediaOfType(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
 }
 
 void getMediaAvailable (DvdEx::DvdExRepository_var DvdExRepositoryVar) {
-    
+    /* retrieve media */
+    try {
+        DvdEx::DvdExMediaSeq* s = DvdExRepositoryVar->getMediaAvailable();
+        for (unsigned int i = 0; i < s->length(); i++) {
+            const DvdEx::DvdExMedia& p = (*s)[i];
+            getAndDumpMedia(DvdExRepositoryVar, p.ObjectId);
+            cout << "--------\n";
+            cout.flush();
+        }
+    } catch (...) {
+        cerr << "Exception in 'getMediaAvailable()'\n";
+    }
+    cout.flush();
 }
 
 void listProviders(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
