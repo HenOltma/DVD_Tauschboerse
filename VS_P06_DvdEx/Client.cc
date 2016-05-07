@@ -36,6 +36,7 @@ void printHelp() {
     cout << "\t gm          : Daten zu Medium ausgeben\n";
     cout << "\t ot          : Daten zu allen Medien vom Typ ausgeben\n";
     cout << "\t yt          : Daten zu allen Medien ab Jahr ausgeben\n";
+    cout << "\t ma          : Daten zu allen verfügbaren Medien ausgeben\n";
     cout.flush();
 }
 
@@ -345,6 +346,10 @@ void getMediaOfType(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
     cout.flush();
 }
 
+void getMediaAvailable (DvdEx::DvdExRepository_var DvdExRepositoryVar) {
+    
+}
+
 void listProviders(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
     cout << "Anbieter:" << endl;
     try {
@@ -455,6 +460,10 @@ void dispatchCmd(DvdEx::DvdExRepository_var DvdExRepositoryVar,
         getMediaYoungerThan(DvdExRepositoryVar);
         return;
     }
+    if (strncmp(s, "ma", 2) == 0) {
+        getMediaAvailable(DvdExRepositoryVar);
+        return;
+    }
     cout << "Unbekannter Befehl. 'h' fuer Hilfe." << endl;
 }
 
@@ -501,7 +510,7 @@ char* getIORFromFile(char* fname) {
 /*
  * Bind to server.
  */
-CORBA::Object_ptr
+    CORBA::Object_ptr
 bindToServer(CORBA::ORB_ptr orb, char* srvname) {
     char* ior = getIORFromFile(srvname);
     if (ior == NULL)

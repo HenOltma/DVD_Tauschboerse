@@ -38,7 +38,6 @@ writeIORToFile(CORBA::ORB_ptr orb,
 }
 
 int main(int argc, char **argv) {
-
     // create a DvdExRepository object - using the implementation class DvdExRepository_i
 
     char srvname[40];

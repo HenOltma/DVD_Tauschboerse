@@ -47,6 +47,7 @@ public:
     virtual DvdEx::DvdExMediaSeq* getMediaYoungerThan(CORBA::Short);
     virtual DvdEx::DvdExMediaSeq* getMediaOfType(DvdEx::Genre);
     virtual DvdEx::DvdExMedia* getMedia(CORBA::Long);
+    virtual DvdEx::DvdExMediaSeq* getMediaAvailable();
     virtual void delMedia(CORBA::Long);
     virtual void addMedia(const DvdEx::DvdExMedia&);
 

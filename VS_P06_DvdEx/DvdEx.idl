@@ -61,5 +61,7 @@ module DvdEx {
       raises (ServerException);
     DvdExMediaSeq getMediaYoungerThan (in short year) 
       raises (ServerException);
+    DvdExMediaSeq getMediaAvailable () 
+      raises (ServerException);
   };
 };
