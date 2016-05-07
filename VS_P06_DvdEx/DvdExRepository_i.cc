@@ -446,6 +446,43 @@ DvdExRepository_i::getMedia(CORBA::Long id) {
     return new DvdEx::DvdExMedia(*res);
 }
 
+DvdEx::DvdExMediaSeq *
+DvdExRepository_i::getMediaAvailable() {
+    int cnt = 0;
+    int i = 0;
+
+    /* determine sequence length */
+    for (i = 0; i < m_MaxMediaNo; i++) {
+        if (media[i] != 0) {
+            if (media[i]->Status == 1)
+                cnt++;
+        }
+    }
+
+    cout << "<getMediaOfType> " << cnt << " Medien gefunden.\n";
+    cout.flush();
+
+    DvdEx::DvdExMediaSeq* seq = new DvdEx::DvdExMediaSeq(cnt);
+    seq->length(cnt);
+
+    cout << "<getMediaOfType> " << seq->length() << " in der Sequenz.\n";
+    cout.flush();
+
+    cnt = 0;
+
+    /* copy result */
+    for (i = 0; i < m_MaxMediaNo; i++) {
+        if (media[i] != 0) {
+            if (media[i]->Status == 1) {
+                (*seq)[cnt] = *(new DvdEx::DvdExMedia(*(media[i])));
+                cnt++;
+            }
+        }
+    }
+
+    return seq;
+}
+
 void
 DvdExRepository_i::delMedia(CORBA::Long id) {
     if ((id >= m_MaxMediaNo - 1) || (id < 0) ||
