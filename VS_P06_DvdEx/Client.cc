@@ -101,9 +101,6 @@ void newProvider(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
 
     /* add provider to repository */
     DvdExRepositoryVar->addProvider(p);
-
-    cout << DvdExRepositoryVar->currentMaxProviderId() - 1
-            << " ist die ID des neuen Anbieters.\n";
 }
 
 DvdEx::Genre convertGenre (char* genre_st)
@@ -197,9 +194,6 @@ void newMedia(DvdEx::DvdExRepository_var DvdExRepositoryVar) {
 
     /* add media to repository */
     DvdExRepositoryVar->addMedia(m);
-
-    cout << DvdExRepositoryVar->currentMaxMediaId() - 1
-            << " ist die ID des neuen Mediums.\n";
 }
 
 void getAndDumpMedia(DvdEx::DvdExRepository_var DvdExRepositoryVar, CORBA::Long id) {

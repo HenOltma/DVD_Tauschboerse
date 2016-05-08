@@ -41,9 +41,9 @@ module DvdEx {
     readonly attribute long currentMaxProviderId;
     readonly attribute long currentMaxMediaId;    
 
-    void save ();
+    oneway void save ();
 
-    void addProvider (in DvdExProvider p);
+    oneway void addProvider (in DvdExProvider p);
     void delProvider (in long id);    
 
     DvdExProvider getProvider (in long id) 
@@ -51,7 +51,7 @@ module DvdEx {
     DvdExProviderSeq getProviders () 
       raises (ServerException);
 
-    void addMedia (in DvdExMedia p);
+    oneway void addMedia (in DvdExMedia p);
     void delMedia (in long id);    
 
 

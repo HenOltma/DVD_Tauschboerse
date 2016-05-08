@@ -7,6 +7,7 @@
 //
 //***************************************************************************/
 
+#include <unistd.h>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -459,13 +460,13 @@ DvdExRepository_i::getMediaAvailable() {
         }
     }
 
-    cout << "<getMediaOfType> " << cnt << " Medien gefunden.\n";
+    cout << "<getMediaAvailable> " << cnt << " Medien gefunden.\n";
     cout.flush();
 
     DvdEx::DvdExMediaSeq* seq = new DvdEx::DvdExMediaSeq(cnt);
     seq->length(cnt);
 
-    cout << "<getMediaOfType> " << seq->length() << " in der Sequenz.\n";
+    cout << "<getMediaAvailable> " << seq->length() << " in der Sequenz.\n";
     cout.flush();
 
     cnt = 0;
@@ -502,6 +503,8 @@ DvdExRepository_i::delMedia(CORBA::Long id) {
 
 void
 DvdExRepository_i::addMedia(const DvdEx::DvdExMedia & m) {
+    cout << "Wartet 30 Sekunden vorm hinzufügen eines neuen Mediums"<<endl;
+    sleep(30);
     if (m_currentMaxMediaId < m_MaxMediaNo - 1) {
         DvdEx::DvdExMedia* nm = new DvdEx::DvdExMedia();
         nm->ObjectId = m_currentMaxMediaId;
@@ -596,6 +599,8 @@ DvdExRepository_i::delProvider(CORBA::Long id) {
 
 void
 DvdExRepository_i::addProvider(const DvdEx::DvdExProvider & p) {
+    cout << "Wartet 30 Sekunden vorm hinzufügen eines neuen Mediums"<<endl;
+    sleep(30);
     if (m_currentMaxProviderId < m_MaxProviderNo - 1) {
         DvdEx::DvdExProvider* np = new DvdEx::DvdExProvider();
         np->ObjectId = m_currentMaxProviderId;

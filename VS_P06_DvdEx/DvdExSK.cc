@@ -337,13 +337,13 @@ _0RL_lcfn_8960fa0decf4ae72_20000000(omniCallDescriptor* cd, omniServant* svnt)
 // Code for DvdEx::DvdExRepository::save
 
 // Proxy call descriptor class. Mangled signature:
-//  void
+//  _wvoid
 class _0RL_cd_8960fa0decf4ae72_30000000
   : public omniCallDescriptor
 {
 public:
   inline _0RL_cd_8960fa0decf4ae72_30000000(LocalCallFn lcfn, const char* op_, size_t oplen, _CORBA_Boolean upcall=0)
-    : omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+    : omniCallDescriptor(lcfn, op_, oplen, 1, _user_exns, 0, upcall)
   {
     
   }
@@ -387,13 +387,13 @@ void DvdEx::_objref_DvdExRepository::save()
 // Code for DvdEx::DvdExRepository::addProvider
 
 // Proxy call descriptor class. Mangled signature:
-//  void_i_cDvdEx_mDvdExProvider
+//  _wvoid_i_cDvdEx_mDvdExProvider
 class _0RL_cd_8960fa0decf4ae72_50000000
   : public omniCallDescriptor
 {
 public:
   inline _0RL_cd_8960fa0decf4ae72_50000000(LocalCallFn lcfn, const char* op_, size_t oplen, _CORBA_Boolean upcall=0)
-    : omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+    : omniCallDescriptor(lcfn, op_, oplen, 1, _user_exns, 0, upcall)
   {
     
   }
@@ -727,13 +727,13 @@ DvdEx::DvdExProviderSeq* DvdEx::_objref_DvdExRepository::getProviders()
 // Code for DvdEx::DvdExRepository::addMedia
 
 // Proxy call descriptor class. Mangled signature:
-//  void_i_cDvdEx_mDvdExMedia
+//  _wvoid_i_cDvdEx_mDvdExMedia
 class _0RL_cd_8960fa0decf4ae72_d0000000
   : public omniCallDescriptor
 {
 public:
   inline _0RL_cd_8960fa0decf4ae72_d0000000(LocalCallFn lcfn, const char* op_, size_t oplen, _CORBA_Boolean upcall=0)
-    : omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+    : omniCallDescriptor(lcfn, op_, oplen, 1, _user_exns, 0, upcall)
   {
     
   }
