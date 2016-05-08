@@ -11,4 +11,5 @@ wird zunächst die IOR-Datei ausgelesen und dann mithilfe von
 Wir haben zunächst die Methode `getMediaAvailable()` in der DvdExRepository_i.hh
 und der DvdEx.idl Datei hinzugefügt, dann die entsprechenden Schnittstellen beim
 Client vorbereitet (bei den prompts).
+Den Code im Client konnte man, in leicht abgeleiteter Form, von der Methode `getMediaofType()` übernehmen, den Code vom Server ebenfalls.
 
