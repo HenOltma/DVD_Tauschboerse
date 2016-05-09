@@ -43,16 +43,16 @@ module DvdEx {
 
     oneway void save ();
 
-    oneway void addProvider (in DvdExProvider p);
-    void delProvider (in long id);    
+    void addProvider (in DvdExProvider p);
+    oneway void delProvider (in long id);    
 
     DvdExProvider getProvider (in long id) 
       raises (ServerException);
     DvdExProviderSeq getProviders () 
       raises (ServerException);
 
-    oneway void addMedia (in DvdExMedia p);
-    void delMedia (in long id);    
+    void addMedia (in DvdExMedia p);
+    oneway void delMedia (in long id);    
 
 
     DvdExMedia getMedia (in long id) 
